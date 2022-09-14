@@ -193,3 +193,14 @@ button {
     flex-direction: column;
   }
 }
+
+
+
+
+
+@media screen and (min-width: 1040px) {
+  .card {
+    width: 30%;
+    display: block;
+  }
+}
