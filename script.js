@@ -10,6 +10,7 @@ let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
+let typeSpeed = 0;
 
 // Load and display question
 fetch("./texts.json")
@@ -70,6 +71,12 @@ const gameOver = () => {
   const finishTime = new Date().getTime();
   const timeTaken = (finishTime - startTime) / 1000;
 
+  /* Speed Count */
+  function speedCount(text) {
+    return text.split(" ")
+  }
+  typeSpeed = Math.round((speedCount(questionText).length / timeTaken) * 60);
+
   // show result modal
   resultModal.innerHTML = "";
   resultModal.classList.toggle("hidden");
@@ -83,10 +90,11 @@ const gameOver = () => {
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
+    <p>Your typing speed is <span class="red">${typeSpeed}</span></p> 
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, errorCount, typeSpeed);
 
   // restart everything
   startTime = null;
