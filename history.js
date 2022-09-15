@@ -7,9 +7,9 @@ function addHistory(questionText, timeTaken, errorCount, typeSpeed) {
   newRow.innerHTML = `
   <h3>${questionText}</h3>
   <div>
-  <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+  <p>You took: <span class="bold red">${timeTaken}</span> seconds</p>
   <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
-  <p>Your typing speed is <span class="red">${typeSpeed}</span></p> 
+  <p>Your typing speed is <span class="bold red">${typeSpeed}</span></p> 
   </div>
   `;
 
@@ -31,9 +31,9 @@ function displayHistory() {
 
     newRow.innerHTML = `
   <h3>${test.questionText}</h3>
-  <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
+  <p>You took: <span class="bold red">${test.timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p>
-    <p>Your typing speed is <span class="red">${test.typeSpeed}</span></p> 
+    <p>Your typing speed is <span class="bold red">${test.typeSpeed}</span></p> 
   `;
 
     histories.appendChild(newRow);
